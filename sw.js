@@ -1,9 +1,9 @@
 // Development-Modus erkennen
 const isDevelopment = location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.port;
 
-const CACHE_NAME = isDevelopment ? 'informatiktag-dev' : 'informatiktag-v1.0.3';
-const STATIC_CACHE = isDevelopment ? 'informatiktag-static-dev' : 'informatiktag-static-v3';
-const API_CACHE = isDevelopment ? 'informatiktag-api-dev' : 'informatiktag-api-v3';
+const CACHE_NAME = isDevelopment ? 'informatiktag-dev' : 'informatiktag-v1.0.4';
+const STATIC_CACHE = isDevelopment ? 'informatiktag-static-dev' : 'informatiktag-static-v4';
+const API_CACHE = isDevelopment ? 'informatiktag-api-dev' : 'informatiktag-api-v4';
 
 // Assets die immer gecacht werden sollen
 const STATIC_ASSETS = [
@@ -21,6 +21,7 @@ const STATIC_ASSETS = [
     'assets/logo-infoday.png',
     'assets/floorplan.png',
     'assets/background_gradient.svg',
+    'assets/ute_vogel.svg',
     // Lokale Fonts
     'assets/fonts/JetBrainsMono-Regular.ttf',
     'assets/fonts/JetBrainsMono-Bold.ttf',
