@@ -511,6 +511,7 @@ textarea:focus {
 /* Link Button Click-Effekt */
 .link-button {
     transition: background-color 0.15s ease;
+    background-color: #003c61;
 }
 
 .link-button:hover {

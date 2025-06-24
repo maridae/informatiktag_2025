@@ -280,7 +280,7 @@ function updateLanguage() {
 
     if (navAgenda) navAgenda.textContent = (translations.agenda || 'AGENDA').toUpperCase();
     if (navMap) navMap.textContent = (translations.map || 'PLAN').toUpperCase();
-    if (navInfo) navInfo.textContent = 'INFO';
+    if (navInfo) navInfo.textContent = 'INFOS';
 
     // Seiten-Titel aktualisieren
     document.title = `${translations.eventTitle || 'Informatiktag 2025'}`;
@@ -454,13 +454,39 @@ function renderInfo() {
         <div>
             <div class="space-y-4">
                 <div class="ui-element shadow-tech p-4 rounded-lg">
-                    <h3 class="mono text-lg mb-3">STUDIUM INFORMATIK</h3>
+                    <h1 class="mono text-lg mb-3">Informatik studieren in Oldenburg</h1>
                     <p class="text-sm mb-3">Das Studium der Informatik an der Uni Oldenburg ist ein wissenschaftliches Studium, d.h. es qualifiziert Absolvent*innen selbstständig und mit wissenschaftlichen Methoden neuartige Fragestellungen im Bereich der Informatik und ihrer Anwendungen zu untersuchen und zu lösen.</p>
-                    <a href="https://www.informatik-uni-oldenburg.de/" target="_blank" rel="noopener noreferrer" class="link-button inline-flex items-center gap-2 px-4 py-2 text-sm text-white rounded-md" style="background-color: #004e98;">
-                        Für mehr Informationen zum Studium
+                    <a href="https://www.informatik-uni-oldenburg.de/" target="_blank" rel="noopener noreferrer" class="link-button flex w-full items-center justify-center gap-2 px-4 py-2 text-sm text-white rounded-md mb-3">
+                        Mehr Informationen zum Studium
                         <i class="ph ph-arrow-square-out text-base"></i>
                     </a>
+                    <a href="https://www.instagram.com/informatik_uni_oldenburg/" target="_blank" rel="noopener noreferrer" class="link-button flex w-full items-center justify-center gap-2 px-4 py-2 text-sm text-white rounded-md">
+                        <i class="ph ph-instagram-logo text-base"></i> Folge uns auf Instagram
+                    </a>
                 </div>
+                <div class="ui-element shadow-tech p-4 rounded-lg">
+                    <h2 class="mono text-lg mb-3">Noch Fragen?</h2>
+                    <p class="text-sm mb-3">Bei Fragen zum Informatikstudium steht dir Dr. Ute Vogel-Sonnenschein gerne zur Verfügung.</p>
+                    
+                    <div class="flex items-start gap-4 mt-4">
+                        <img src="assets/ute_vogel.png" alt="Dr. Ute Vogel-Sonnenschein" class="w-25 h-25 rounded-full object-cover flex-shrink-0">
+                        <div class="space-y-2 flex-1">
+                             <div class="flex items-center gap-2">
+                                 <i class="ph ph-phone text-lg"></i>
+                                 <a href="tel:+494417982752" class="text-sm text-tech hover:opacity-75">+49 441 798-2752</a>
+                             </div>
+                             <div class="flex items-center gap-2">
+                                 <i class="ph ph-clock text-lg"></i>
+                                 <span class="text-sm">nach Vereinbarung (in Präsenz oder online)</span>
+                             </div>
+                             <div class="flex items-center gap-2">
+                                 <i class="ph ph-envelope text-lg"></i>
+                                 <a href="mailto:ute.vogel@uol.de" class="text-sm text-tech hover:opacity-75">ute.vogel@uol.de</a>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+              
             </div>
         </div>
     `;
