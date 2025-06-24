@@ -1,0 +1,71 @@
+{
+    "name": "Informatiktag 2025",
+    "short_name": "Informatiktag",
+    "description": "Informatiktag Zukunft ist jetzt - Praxisnahe Einblicke für Ihre Schüler*innen",
+    "version": "1.0.1",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "theme_color": "#003c61",
+    "background_color": "#FEFFFE",
+    "lang": "de",
+    "dir": "ltr",
+    "categories": [
+        "education",
+        "events",
+        "university"
+    ],
+    "icons": [
+        {
+            "src": "/assets/favicon.png",
+            "sizes": "32x32",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Agenda",
+            "short_name": "Agenda",
+            "description": "Direkt zur Agenda",
+            "url": "/?section=agenda",
+            "icons": [
+                {
+                    "src": "/assets/favicon.png",
+                    "sizes": "32x32"
+                }
+            ]
+        },
+        {
+            "name": "Karte",
+            "short_name": "Plan",
+            "description": "Gebäudeplan anzeigen",
+            "url": "/?section=map",
+            "icons": [
+                {
+                    "src": "/assets/favicon.png",
+                    "sizes": "32x32"
+                }
+            ]
+        },
+        {
+            "name": "Favoriten",
+            "short_name": "Favoriten",
+            "description": "Meine Favoriten",
+            "url": "/?section=favorites",
+            "icons": [
+                {
+                    "src": "/assets/favicon.png",
+                    "sizes": "32x32"
+                }
+            ]
+        }
+    ],
+    "protocol_handlers": [
+        {
+            "protocol": "web+informatiktag",
+            "url": "/?event=%s"
+        }
+    ]
+}

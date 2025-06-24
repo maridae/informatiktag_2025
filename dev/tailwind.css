@@ -1,0 +1,534 @@
+@import "tailwindcss";
+
+/* Text-Selektion kontrolliert erlauben */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+div.event-description {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+/* Buttons und Navigation: keine Text-Selektion */
+button,
+.nav-item,
+.btn-primary,
+.btn-secondary {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Map-Container: Verhindert Browser-Zoom und Scrolling */
+#mapImage,
+#mapImage img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* Verhindert Touch-Zoom komplett */
+    touch-action: none;
+    /* Verhindert Drag-and-Drop */
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+}
+
+/* Lokale Font-Definitionen */
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../fonts/JetBrainsMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../fonts/NotoSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('../fonts/NotoSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Futuristisches Design System */
+:root {
+    --color-primary: #003c61;
+    --color-border: #003c61;
+    --border-width: 1px;
+    --spacing-grid: 24px;
+}
+
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* Monospace für Überschriften */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* SVG Gradient Hintergrund mit 50% Alpha */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../background_gradient.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Alle UI-Elemente schwarz mit dünnen Borders */
+.ui-element {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: var(--border-width) solid var(--color-border);
+    color: var(--color-primary);
+}
+
+/* Header Styling */
+.header-container {
+    background-color: #003c61;
+    backdrop-filter: blur(10px);
+}
+
+/* Header Bottom - nur untere Ecken abrunden */
+#headerBottom {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
+
+/* Header Text weiß */
+.header-container h1,
+.header-container #headerTitle {
+    color: white;
+}
+
+/* Navigation Items */
+.nav-item {
+    background-color: transparent;
+    color: var(--color-primary);
+    transition: all 0.2s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.nav-item:hover {
+    color: var(--color-primary);
+}
+
+.nav-item.active {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.nav-item span {
+    transition: transform 0.4s ease;
+}
+
+.nav-item.active span {
+    transform: scale(1.15);
+}
+
+.nav-item svg {
+    color: var(--color-primary);
+}
+
+/* Animierte Navigation Kreis mit Glow-Effekt */
+.nav-indicator {
+    position: absolute;
+    bottom: -120px;
+    height: 200px;
+    width: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 60, 97, 0.45) 0%, rgba(0, 60, 97, 0.0) 60%, transparent 100%);
+    transition: all 0.4s ease;
+    z-index: -1;
+    /* JavaScript wird left und transform setzen */
+}
+
+/* Bottom Navigation mit Safe Area Support */
+.bottom-nav-safe {
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    transition: bottom 0.3s ease;
+}
+
+/* Fallback für ältere Browser ohne safe-area-inset Unterstützung */
+@supports not (bottom: env(safe-area-inset-bottom)) {
+    .bottom-nav-safe {
+        bottom: 1rem;
+    }
+}
+
+/* Update Notification mit Safe Area Support */
+.update-notification-safe {
+    bottom: calc(5rem + env(safe-area-inset-bottom));
+    transition: bottom 0.3s ease;
+}
+
+/* Fallback für Update Notification */
+@supports not (bottom: env(safe-area-inset-bottom)) {
+    .update-notification-safe {
+        bottom: 5rem;
+    }
+}
+
+/* Main Content mit Safe Area Support für Bottom Padding */
+.main-content-safe {
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
+}
+
+/* Fallback für Main Content */
+@supports not (padding-bottom: env(safe-area-inset-bottom)) {
+    .main-content-safe {
+        padding-bottom: 6rem;
+    }
+}
+
+/* Event Cards */
+.event-card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: var(--border-width) solid var(--color-border);
+    color: var(--color-primary);
+    border-radius: 12px;
+}
+
+/* Input Elements */
+input,
+select,
+textarea {
+    background-color: rgba(255, 255, 255, 0.95);
+    border: var(--border-width) solid var(--color-border);
+    color: var(--color-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-width: 2px;
+    background-color: white;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+    border: var(--border-width) solid var(--color-border);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: var(--border-width) solid var(--color-border);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+/* Geometric shapes */
+.geometric-shape {
+    background-color: var(--color-primary);
+}
+
+/* Terminal-style elements */
+.terminal {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--color-primary);
+    color: white;
+    border: var(--border-width) solid var(--color-border);
+}
+
+/* Custom text styling entfernt - Standard Tailwind line-height verwenden */
+
+/* Utility classes */
+.border-tech {
+    border: var(--border-width) solid var(--color-border);
+}
+
+.border-tech-thick {
+    border: var(--border-width) solid var(--color-border);
+}
+
+.border-tech-top {
+    border-top: var(--border-width) solid var(--color-border);
+}
+
+.shadow-tech {
+    box-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.menu-backdrop {
+    backdrop-filter: blur(16px) brightness(1.1);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.text-tech {
+    color: var(--color-primary);
+}
+
+.bg-tech {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Remove default Tailwind focus styles that conflict */
+.focus\:ring-0:focus {
+    --tw-ring-offset-shadow: none;
+    --tw-ring-shadow: none;
+    box-shadow: none;
+}
+
+/* Language selector styling */
+#languageSelect {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Map container */
+.map-container {
+    background-color: #ffffff;
+    border: var(--border-width) solid var(--color-border);
+}
+
+/* Category badges */
+.category-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background-color: var(--color-primary);
+    color: white;
+    border: var(--border-width) solid var(--color-border);
+}
+
+/* Time badge - no background */
+.time-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+}
+
+/* Location badge - no background */
+.location-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+}
+
+/* Event type badges with different colors */
+.event-type-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-left: var(--border-width) solid var(--color-border);
+    border-bottom: var(--border-width) solid var(--color-border);
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 12px;
+}
+
+/* Event type colors werden jetzt dynamisch per JavaScript gesetzt */
+
+/* Separator line */
+.event-separator {
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+/* Map station items */
+.map-station-item {
+    display: flex;
+    align-items: stretch;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: var(--border-width) solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.map-station-number {
+    padding: 12px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.875rem;
+    color: white;
+    border-right: var(--border-width) solid var(--color-border);
+    min-width: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map-station-text {
+    padding: 12px 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    flex: 1;
+}
+
+/* Station type colors */
+.station-number {
+    background-color: #45B7D1;
+    /* Blau */
+}
+
+.station-garderobe {
+    background-color: #2D5A57;
+    /* Dunkelgrün/Petrol */
+}
+
+.station-workshop {
+    background-color: #7ED321;
+    /* Hellgrün */
+}
+
+.station-info {
+    background-color: #FF6B6B;
+    /* Rot */
+}
+
+/* Station markers */
+.station-marker {
+    border: var(--border-width) solid var(--color-border);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Legend items */
+.legend-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Update notification */
+.update-notification {
+    background-color: var(--color-primary);
+    color: white;
+    border: var(--border-width) solid var(--color-border);
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Link Button Click-Effekt */
+.link-button {
+    transition: background-color 0.15s ease;
+}
+
+.link-button:hover {
+    background-color: #0056b3 !important;
+}
+
+.link-button:active,
+.link-button:focus {
+    background-color: #003d82 !important;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+    }
+}

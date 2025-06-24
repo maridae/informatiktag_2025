@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>INFORMATIKTAG 2025</title>
+    <!-- Tailwind CSS - Local -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Phosphor Icons - Local -->
+    <link rel="stylesheet" type="text/css" href="assets/icons/regular/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/icons/fill/style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#003c61">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Informatiktag">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="header-container">
+        <div class="px-4">
+            <!-- Erste Zeile: Logo mittig oder links+rechts je nach Sprachanzahl (scrollt mit) -->
+            <div id="headerTop"
+                class="flex items-center justify-center mb-3 transition-all duration-300 ease-in-out overflow-hidden">
+                <!-- Logo -->
+                <img src="assets/logo_uni_oldenburg_it_department_white.png" alt="Uni Logo" class="h-12 mt-3">
+
+                <!-- Sprachwechsel -->
+                <select id="languageSelect" class="text-sm ui-element px-2 py-1 hidden focus:ring-0">
+                    <!-- Wird dynamisch mit verfügbaren Sprachen gefüllt -->
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Titel (getrennt vom Header) -->
+    <div id="headerBottom" class="sticky top-0 z-50 header-container text-center shadow-tech">
+        <div class="px-4">
+            <h1 class="font-bold text-xl py-3" id="headerTitle">INFORMATIKTAG 2025</h1>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="flex-1 p-4 main-content-safe">
+        <!-- Content wird hier dynamisch geladen -->
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav
+        class="fixed bottom-nav-safe left-1/2 transform -translate-x-1/2 menu-backdrop z-50 rounded-full border-tech shadow-tech overflow-hidden">
+        <div class="flex justify-center py-1 px-8 gap-6 relative">
+            <!-- Animierte Linie -->
+            <div id="nav-indicator" class="nav-indicator"></div>
+            <button id="nav-agenda" class="nav-item flex flex-col items-center px-3 py-1 text-sm rounded-none">
+                <i class="ph ph-cards-three text-2xl mb-1 icon-outline"></i>
+                <i class="ph-fill ph-cards-three text-2xl mb-1 icon-filled hidden"></i>
+                <span class="mono">AGENDA</span>
+            </button>
+            <button id="nav-map" class="nav-item flex flex-col items-center px-3 py-1 text-sm rounded-none">
+                <i class="ph ph-map-pin-simple-area text-2xl mb-1 icon-outline"></i>
+                <i class="ph-fill ph-map-pin-simple-area text-2xl mb-1 icon-filled hidden"></i>
+                <span class="mono">PLAN</span>
+            </button>
+
+            <button id="nav-info" class="nav-item flex flex-col items-center px-3 py-1 text-sm rounded-none">
+                <i class="ph ph-info text-2xl mb-1 icon-outline"></i>
+                <i class="ph-fill ph-info text-2xl mb-1 icon-filled hidden"></i>
+                <span class="mono">INFO</span>
+            </button>
+        </div>
+    </nav>
+
+
+
+    <!-- Update Notification -->
+    <div id="updateNotification"
+        class="fixed update-notification-safe left-4 right-4 bg-tech border-tech-thick p-4 rounded-none hidden z-60">
+        <p class="text-sm font-medium mono">UPDATE VERFÜGBAR</p>
+        <p class="text-xs mb-2">Eine neue Version der App ist verfügbar</p>
+        <button onclick="reloadApp()" class="btn-primary px-4 py-2 text-xs mr-2">AKTUALISIEREN</button>
+        <button onclick="hideUpdateNotification()" class="btn-secondary px-4 py-2 text-xs">SPÄTER</button>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+[
+    {
+        "start": "08:30",
+        "end": "09:00",
+        "title": "Ankommen",
+        "location": "Ort: A14 - Foyer",
+        "description": "Herzlich willkommen, wir freuen uns, euch am Informatiktag 2025 begrüßen zu dürfen. Nutzt die Zeit, um euch über das Tagesprogramm zu informieren und verschafft euch einen Überblick."
+    },
+    {
+        "start": "09:00",
+        "end": "09:15",
+        "title": "Begrüßung",
+        "location": "Ort: A14 - Hörsaal 1",
+        "description": "Eröffnung des Informatiktags."
+    },
+    {
+        "start": "09:15",
+        "end": "09:45",
+        "title": "Wie Roboter klüger, Maschinen selbstständiger und Energieverbrauch nachhaltiger wird",
+        "location": "Ort: A14 - Hörsaal 1",
+        "description": "Einblick in aktuelle Forschung zu intelligenten Systemen, autonomen Maschinen und nachhaltigen Energielösungen in der Informatik.",
+        "category": "Vorlesung"
+    },
+    {
+        "start": "09:45",
+        "end": "12:00",
+        "title": "Eröffnung der Stände",
+        "location": "Ort: A14 - Foyer",
+        "description": "An den Ständen findest du Einblicke in verschiedene Informatikthemen. Eine Übersicht der einzelnen Stationen findest du in der Karte."
+    },
+    {
+        "start": "10:00",
+        "end": "10:30",
+        "title": "Informatik-Tour",
+        "location": "Ort: An der Information",
+        "description": "Du willst wissen, wie ein Informatikstudium wirklich aussieht? Bei unserer Rundtour bekommst du exklusive Einblicke in die Uni, die Fachräume und verschiedene Labore der Informatik. Studierende führen dich durch den Campus, zeigen dir spannende Projekte und erzählen aus dem echten Studienalltag. Ideal, um Atmosphäre zu schnuppern, Fragen zu stellen – und herauszufinden, ob Informatik zu dir passt.<br><br>Weitere Touren werden noch bekannt gegeben.",
+        "category": "Tour"
+    },
+    {
+        "start": "10:00",
+        "end": "10:30",
+        "title": "Workshop CyberDefenseLab",
+        "location": "Ort: Startpunkt Workshops",
+        "description": "Wie sicher sind eigentlich deine Daten im Internet? In diesem Workshop erfährst du, worauf man beim Surfen achten sollte, was gute Passwörter ausmacht und wie man sich vor typischen Gefahren schützt. Dabei lernst du auch, welchen Risiken Server und Informationen täglich im Netz ausgesetzt sind – und kannst sogar selbst in die Rolle einer Hackerin schlüpfen, um zu verstehen, wie Angriffe funktionieren. Spannend, interaktiv und mit vielen Aha-Momenten!",
+        "category": "Workshop"
+    },
+    {
+        "start": "10:30",
+        "end": "11:00",
+        "title": "Workshop KI mit Calliope mini",
+        "location": "Ort: Startpunkt Workshops",
+        "description": "Wie kann ein kleiner Mikrocontroller wie der Calliope mini Bewegungen erkennen – und was hat das mit Künstlicher Intelligenz zu tun? In diesem Workshop lernst du, wie du mithilfe einfacher Gestenerkennung spannende Projekte umsetzen kannst. Entdecke spielerisch, wie Maschinen „lernen“, auf deine Bewegungen zu reagieren!",
+        "category": "Workshop"
+    },
+    {
+        "start": "11:15",
+        "end": "11:45",
+        "title": "Workshop KI mit Calliope mini",
+        "location": "Ort: Startpunkt Workshops",
+        "description": "Wie kann ein kleiner Mikrocontroller wie der Calliope mini Bewegungen erkennen – und was hat das mit Künstlicher Intelligenz zu tun? In diesem Workshop lernst du, wie du mithilfe einfacher Gestenerkennung spannende Projekte umsetzen kannst. Entdecke spielerisch, wie Maschinen „lernen“, auf deine Bewegungen zu reagieren!",
+        "category": "Workshop"
+    },
+    {
+        "start": "12:00",
+        "end": "12:10",
+        "title": "Quiz, Tombola & Infos",
+        "location": "Ort: A14 - Hörsaal 2",
+        "description": "Vorstellung des interaktiven Quiz-Spiels und der Tombola-Verlosung.",
+        "category": "Quiz"
+    },
+    {
+        "start": "12:10",
+        "end": "12:20",
+        "title": "Vorstellung Informatik Bachelorstudiengänge",
+        "location": "Ort: A14 - Hörsaal 2",
+        "description": "Detaillierte Informationen zu den Bachelor-Studiengängen Informatik, Wirtschaftsinformatik und den Studienaufbau.",
+        "category": "Vorlesung"
+    },
+    {
+        "start": "12:20",
+        "end": "12:30",
+        "title": "Quiz",
+        "location": "Ort: A14 - Hörsaal 2",
+        "description": "Teste dein Informatik-Wissen.",
+        "category": "Quiz"
+    },
+    {
+        "start": "12:30",
+        "end": "12:40",
+        "title": "Vorstellung Informatik Masterstudiengänge",
+        "location": "Ort: A14 - Hörsaal 2",
+        "description": "Informationen zu den Master-Studiengängen, Spezialisierungsmöglichkeiten und Forschungsschwerpunkten.",
+        "category": "Vorlesung"
+    },
+    {
+        "start": "12:40",
+        "end": "13:05",
+        "title": "Abschluss",
+        "location": "Ort: A14 - Hörsaal 2",
+        "description": "Tombola-Verlosung und Schlussworte."
+    }
+]
